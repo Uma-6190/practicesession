@@ -1,0 +1,78 @@
+What Does Git Add Do?
+git add [filename] selects that file, and moves it to the staging area, marking it for inclusion in the next commit. You can select all files, a directory, specific files, or even specific parts of a file for staging and commit.
+
+This means if you git add a deleted file the deletion is staged for commit. The language of "add" when you're actually "deleting" can be confusing. If you think or use git stage in place of git add, the reality of what is happening may be more clear.
+
+git add and git commit go together hand in hand. They don't work when they aren't used together. And, they both work best when used thinking of their joint functionality.
+
+How to Use git add
+Common usages and options for git add
+git add <path>: Stage a specific directory or file
+git add .: Stage all files (that are not listed in the .gitignore) in the entire repository
+git add -p: Interactively stage hunks of changes
+You can see all of the many options with git add in git-scm's documentation.
+
+Examples of git add
+git add usually fits into the workflow in the following steps:
+
+Create a branch: git branch update-readme
+Checkout to that branch: git checkout update-readme
+Change a file or files
+Save the file or files
+Add the files or segments of code that should be included in the next commit: git add README.md
+Commit the changes: git commit -m "update the README to include links to contributing guide"
+Push the changes to the remote branch: git push -u origin update-readme
+But, git add could also be used like:
+
+Create a branch: git branch update-readme
+Checkout to that branch: git checkout update-readme
+Change a file or files
+Save the file or files
+Add only one file, or one part of the changed file: git add README.md
+Commit the first set of changes: git commit -m "update the README to include links to contributing guide"
+Add another file, or another part of the changed file: git add CONTRIBUTING.md
+Commit the second set of changes: git commit -m "create the contributing guide"
+(Repeat as necessary)
+Push the changes to the remote branch: git push -u origin update-readme
+git add All Files
+Staging all available files is a popular, though risky, operation. This can save time, but the risks are two-fold:
+
+Poorly thought out history
+By staging all available changes, the clarity of your history will likely suffer. Being able to shape your history is one of the greatest advantages of using Git. If your commits are too large, contain unrelated changes, or are unclearly described in the commit message, you will lose the benefits of viewing and changing history.
+
+Accidentally staging and committing files
+By using an option to add all files at once, you may accidentally stage and commit a file. Most common flags don't add files tracked in the .gitignore file. But, any file not listed in the .gitignore file will be staged and committed. This applies to large binary files, and files containing sensitive information like passwords or authentication tokens.
+
+Deciding to stage all files
+If the time is right to stage all files, there are several commands that you can choose from. As always, it's very important to know what you are staging and committing.
+
+git add -A: stages all files, including new, modified, and deleted files, including files in the current directory and in higher directories that still belong to the same git repository
+git add .: adds the entire directory recursively, including files whose names begin with a dot
+git add -u: stages modified and deleted files only, NOT new files
+New files	Modified files	Deleted files	Files with names beginning with a dot	Current directory	Higher directories
+git add -A	Yes	Yes	Yes	Yes	Yes	Yes
+git add .	Yes	Yes	Yes	Yes	Yes	No
+git add -u	No	Yes	Yes	Yes	Yes	Yes
+git add A Folder or Specific File
+The safest and clearest way to use git add is by designating the specific file or directory to be staged. The syntax for this could look like:
+
+git add directory/: Stage all changes to all files within a directory titled directory
+git add README.md: Stage all changes within the README.md file
+
+Undo Added Files
+Before undoing a git add, you should first be sure that you won't lose any work. There's no way to "revert" an add in the same way you can revert a commit, but you can move the files out of the staging area.
+
+For example, if you have a staged file, and then you make more changes to that file in your working directory. Now, the versions in your working directory and your staging area are different. If you take action to remove the changed version of the file from the staging area, the changes that were in your working directory but not staged will be overwritten.
+
+To avoid this, first stage all changes, then unstage them together, or commit the changes and reset back before the commit happened.
+
+Using git reset to undo git add
+git reset is a flexible and powerful command. One of its many use cases is to move changes out of the staging area. To do this, use the "mixed" level of reset, which is the default.
+
+To move staged changes from the staging area to the working directory without affecting committed history, first make sure that you don't have any additional changes to the files in question as mentioned above. Then, type git reset HEAD (aka git reset --mixed HEAD).
+
+Related Terms
+git status: Always a good idea, this command shows you what branch you're on, what files are in the working or staging directory, and any other important information.
+git checkout [branch-name]: Switches to the specified branch and updates the working directory.
+git commit -m "descriptive message": Records file snapshots permanently in version history.
+git push: Uploads all local branch commits to the remote.
