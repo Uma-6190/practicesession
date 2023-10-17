@@ -1,0 +1,85 @@
+How to send data to git repository?
+
+On GitHub.com, navigate to the main page of the repository. Above the list of files, select the Add file dropdown menu and
+click Upload files. Alternatively, you can drag and drop files into your browser. To select the files you want to upload, 
+drag and drop the file or folder, or click choose your files.
+
+Git Bash Commands
+git init: Initializes the new git repository.
+git clone: “git clone“ command is used to clone the repositories which are already available in the remote repository.
+git add: Files present in the working area will move to the staging area.
+git commit: Files that are available in the staging area will be committed to the local repository.
+git status: This command shows the status of the working tree and the staging area.
+git log: “git log” command will help you to see the logs of all the commits made.
+git branch: Creates a new branch.
+git merge: For merging the changes from one branch to another branch.
+git config: “git config” will help you to configure the username and email id.
+git tag: It will display the all tags.
+cd command refers to the command line change directory and is used to get into the desired directory. To navigate between the folders the cd command is used
+
+Syntax:
+
+cd folder_name
+ls command
+ls command is used to list all the files and folders in the current directory.
+
+Syntax:
+
+ls
+Set your global username/email configuration
+Open Git Bash and begin creating a username and email for working on Git Bash.
+
+Set your username:
+
+git config --global user.name "FIRST_NAME LAST_NAME"
+Set your email address:
+
+git config --global user.email "MY_NAME@example.com"
+Initializing a Local Git Repository
+Follow the steps given below to initialize your Local Repository with Git.
+
+Step 1: Open GitHub through the internet and click on create new repository Give a suitable name for your repository and create the repository.
+
+Note: You can choose to initialize your git repository with a README file, and further, you can mention your project details in it. It helps people know what this repository is about. However, it’s absolutely not necessary. But if you do initialize your repo with a README file using interface provided by GitHub, then your local repository won’t have this README file. So to avoid running into a snag while trying to push your files (as in step 3 of the next section), after step 5 (where you initialize your local folder as your git repository), do the following to pull that file to your local folder:
+
+git pull 
+Step 3: The following will appear after creating the repository
+
+Step 4: Open Git Bash and change the current working directory to your local project by use of the cd command.
+
+Steps to Commit Repository In Git Bash
+Step 1: Initialize the local directory as a Git repository.
+
+ git init 
+Step 2: Stage the files for the first commit by adding them to the local repository
+
+git add .
+Step 3: By “git status“ you can see the staged files after that Commit the files that you’ve staged in your local repository.
+
+git commit -m "First commit"
+Now After the “git status” command, it can be seen that nothing to commit is left, Hence all files have been committed.
+
+Pushing Changes to GitHub
+Step 1: Go to the GitHub repository and in the code, section copy the URL and In the Command prompt, add the URL for your repository where your local repository will be pushed.
+
+git remote add origin repository_URL
+Step 2: Push the changes in your local repository to GitHub.
+
+git push origin master
+Here the files have been pushed to the master branch of your repository. Now in the GitHub repository, the pushed files can be seen.
+
+Committing and Pushing Changes to GitBash
+Suppose the files are being changed and new files are added to the local repository. To save the changes in the git repository:
+
+Step 1: Changes have to be staged for the commit.
+
+git add .
+or
+
+git add file_name
+Step 2: Now commit the staged files.
+
+git commit -m "commit_name"
+Step 3: Push the changes.
+
+git push origin master

@@ -1,0 +1,23 @@
+Hi, Good morning sir/madam , my name is m.uma sankar.
+
+Using Command line to PUSH to GitHub
+1. Creating a new repository
+You need to create a new repository and click on the plus sign.
+Fill up all the required details, i.e., repository name, description and also make the repository public this time as it is free.
+
+2. Open your Git Bash
+Git Bash can be downloaded in here, and it is a shell used to interface with the operating system which follows the UNIX 
+command.
+
+3. Create your local project in your desktop directed towards a current working directory
+pwd stands for 'print working directory', which is used to print the current directory.
+
+Move to the specific path in your local computer by cd 'path_name'. The cd commands stand for 'change directory' and it is
+used to change to the working directory in your operating system, and to locate your file, 'path_name', i.e., C:/Users/Dell
+/Downloads/FaceDetect-master needs to be given. This command can identify the required file that you are looking to work 
+with.
+
+4. Initialize the git repository
+Use git init to initialize the repository. It is used to create a new empty repository or directory consisting of files' 
+with the hidden directory. '.git' is created at the top level of your project, which places all of the revision information 
+in one place.
