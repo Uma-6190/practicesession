@@ -16,3 +16,5 @@ GitHub: GitHub is a web-based Git repository hosting service, which offers all o
 10.	Git has minimal external tool configuration.	GitHub has an active marketplace for tool integration.
 11.	Git provides a Desktop interface named Git Gui.	GitHub provides a Desktop interface named GitHub Desktop.
 12.	Git competes with CVS, Azure DevOps Server, Subversion, Mercurial, etc.	GitHub competes with GitLab, Bit Bucket, AWS Code Commit, etc
+
+13. Install the git.
