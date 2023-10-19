@@ -83,3 +83,5 @@ git commit -m "commit_name"
 Step 3: Push the changes.
 
 git push origin master
+
+Install the jenkins
