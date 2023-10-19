@@ -21,3 +21,5 @@ with.
 Use git init to initialize the repository. It is used to create a new empty repository or directory consisting of files' 
 with the hidden directory. '.git' is created at the top level of your project, which places all of the revision information 
 in one place.
+
+5. Install the jenkins
